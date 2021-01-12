@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:filmy/redux/actions/action.dart';
 import 'package:filmy/redux/actions/movie_action.dart';
 import 'package:filmy/redux/actions/navigator_actions.dart';
@@ -16,7 +14,6 @@ List<Middleware<AppState>> createInitMiddleware(
     TypedMiddleware<AppState, RefreshNowMovieAction>(_refreshNow(apiService)),
     TypedMiddleware<AppState, SelectMovieAction>(_selectMovie(apiService)),
     TypedMiddleware<AppState, RefreshTopMovieAction>(_refreshTop(apiService)),
-    // TypedMiddleware<AppState, DeleteQuotesAction>(_delQuote(quoteApiService))
   ];
 }
 
@@ -25,13 +22,10 @@ _init(ApiService apiService) {
   	return (store, action, next) {
 
       apiService.getNowPlaying().then((value){
-        log(value[0].title.toString());
         store.dispatch(new SaveNowPlayingMovieAction(value));
-        // store.dispatch(new IsLoadedAction(true));
       });
 
       apiService.getTop().then((value){
-        log(value[0].title.toString());
         store.dispatch(new SaveTopMovieAction(value));
         
       });
@@ -48,7 +42,6 @@ _selectMovie(ApiService apiService) {
 
       store.dispatch(IsLoadedAction(false));
       apiService.getDetails(action.movieId).then((value){
-        log(value.title);
         store.dispatch(new SelectedMovieAction(value));
         store.dispatch(NavigatorPushAction(AppRoutes.selected));
         store.dispatch(new IsLoadedAction(true));
@@ -64,7 +57,6 @@ _refreshNow(ApiService apiService) {
   	return (store, action, next) {
 
       apiService.getNowPlaying().then((value){
-        log(value[0].title.toString());
         store.dispatch(new SaveNowPlayingMovieAction(value));
       });
 
@@ -80,9 +72,7 @@ _refreshTop(ApiService apiService) {
   	return (store, action, next) {
 
       apiService.getTop().then((value){
-        log(value[0].title.toString());
         store.dispatch(new SaveTopMovieAction(value));
-        
       });
       store.dispatch(new IsLoadedAction(true));
       

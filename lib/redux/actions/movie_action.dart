@@ -9,7 +9,6 @@ class SaveNowPlayingMovieAction extends AppAction{
   @override String toString() => "SaveNowPlayingMovieAction{$movies}";
 }
 
-
 class SaveTopMovieAction extends AppAction{
 
   final List<Movie> movies;
@@ -25,7 +24,6 @@ class SelectMovieAction extends AppAction {
 
   @override String toString() => "SelectMovieAction{$movieId}";
 }
-
 
 class SelectedMovieAction extends AppAction {
   
@@ -50,7 +48,6 @@ class RemoveNowMovieAction extends AppAction {
   @override String toString() => "RemoveNowMovieAction{$movieId}";
 }
 
-
 class RemoveTopMovieAction extends AppAction {
   final int movieId;
   RemoveTopMovieAction(this.movieId);
@@ -60,34 +57,3 @@ class RemoveTopMovieAction extends AppAction {
 
 class RefreshNowMovieAction extends AppAction{}
 class RefreshTopMovieAction extends AppAction{}
-
-// class SaveNewQuotesAction extends AppAction{
-
-//   final List<Quote> quotes;
-//   SaveNewQuotesAction(this.quotes);
-
-//   @override String toString() => "SaveNewQuotesAction{$quotes}";
-// }
-
-// class SaveQuotesAction extends AppAction{
-//   final Quote quote;
-
-//   SaveQuotesAction(this.quote);
-
-//   @override String toString() => "SaveQuotesAction{$quote}";
-// }
-
-// class SaveLocalQuotesAction extends AppAction{
-//   final List<Quote> quotes;
-//   SaveLocalQuotesAction(this.quotes);
-
-//   @override String toString() => "SaveLocalQuotesAction{$quotes}";
-// }
-
-// class DeleteQuotesAction extends AppAction{
-//   final Quote quote;
-
-//   DeleteQuotesAction(this.quote);
-
-//   @override String toString() => "DeleteQuotesAction{$quote}";
-// }

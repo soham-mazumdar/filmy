@@ -6,7 +6,6 @@ import 'package:flutter_redux/flutter_redux.dart';
 
 class MyAppBar extends StatefulWidget with  PreferredSizeWidget {
   @override
-  // final String title;
   final Size preferredSize;
 
   MyAppBar({Key key})
@@ -22,14 +21,7 @@ class _MyAppBarState extends State<MyAppBar> {
 
   TextEditingController nameController = TextEditingController();
   
-  // @override
-  // void initState() {
-  //   super.initState();
-
-  //   nameController.addListener(() {
-  //     print(nameController.text);
-  //   });
-  // }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -49,15 +41,11 @@ class _MyAppBarState extends State<MyAppBar> {
       },
       builder: (context, args) {
 
-        final Function navigate = args["navigate"];
-        final List<String> route = args["route"];
         final Function search = args["search"];
         final String search_Str = args["search_Str"];
         
         
-        // nameController.text = search_Str;
         nameController.addListener(() {
-          print(nameController.text);
           search(nameController.text);
         });
         

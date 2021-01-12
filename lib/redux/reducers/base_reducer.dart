@@ -12,7 +12,5 @@ AppState baseReducer(AppState oldState, dynamic action)
     newSelectedMovie : selectedMovieReducer(oldState.selectedMovie, action),
     newTopRated: topRatedReducer(oldState.topRated, action),
     newSearch: searchReducer(oldState.search, action)
-    // newQuotes: quoteReducer(oldState.quotes, action),
-    // newSavedQuotes: saveLocalReducer(oldState.savedQuotes, action),
   );
 }

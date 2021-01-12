@@ -16,15 +16,9 @@ class TopPage extends StatelessWidget {
           "isLoading": store.state.isLoading,
           "search": store.state.search,
           "topRated": store.state.topRated,
-          "selectMovie": (int movieId) {
-            store.dispatch(SelectMovieAction(movieId));
-          },
-          "remove": (int movieId) {
-            store.dispatch(RemoveTopMovieAction(movieId));
-          },
-          "refresh": (){
-            store.dispatch(RefreshTopMovieAction());
-          }
+          "selectMovie": (int movieId) {store.dispatch(SelectMovieAction(movieId));},
+          "remove": (int movieId) {store.dispatch(RemoveTopMovieAction(movieId));},
+          "refresh": (){store.dispatch(RefreshTopMovieAction());}
         };
         return args;
       },
@@ -37,13 +31,11 @@ class TopPage extends StatelessWidget {
         final String search = args["search"];
         List<Movie> movies = [];
 
-        // print(search);
         topRated.forEach((element) {
           String _title = element.title.toLowerCase();
           String _search = search.toLowerCase();
-          if(_title.contains(_search)){
+          if(_title.contains(_search))
             movies.add(element);
-          }
             
         });
         
@@ -53,7 +45,6 @@ class TopPage extends StatelessWidget {
           Container(child: Center(child: CircularProgressIndicator(),),) : 
           RefreshIndicator(
             onRefresh: () async {
-                  print('object');
                   refresh();
                 },
                       child: ListView.builder(
@@ -78,12 +69,6 @@ class TopPage extends StatelessWidget {
                         remove(movies[index].id);
                       },
                     ),
-                    // new IconSlideAction(
-                    //   caption: 'Share',
-                    //   color: Colors.indigo,
-                    //   icon: Icons.share,
-                    //   // onTap: () => _showSnackBar('Share'),
-                    // ),
                   ],
                 );
               },

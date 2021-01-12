@@ -12,16 +12,6 @@ class InitAppAction extends AppAction {
 
 
 
-
-class SaveDataAction extends AppAction {
-  List<dynamic> val;
-
-  SaveDataAction(this.val);
-
-  @override String toString() => "SaveDataAction{$val}";
-}
-
-
 class LoadedAction extends AppAction{}
 
 class IsLoadedAction extends AppAction {

@@ -36,9 +36,6 @@ class AppState {
     List<Movie> newTopRated,
     Movie newSelectedMovie,
     String newSearch
-    // String newSelectedPage,
-    // List<Quote> newQuotes,
-    // List<Quote> newSavedQuotes
   })
   {
     return AppState(
@@ -48,9 +45,6 @@ class AppState {
       topRated: newTopRated ?? this.topRated,
       selectedMovie: newSelectedMovie ?? this.selectedMovie,
       search: newSearch ?? this.search
-      // selectedPage: newSelectedPage ?? this.selectedPage,
-      // quotes: newQuotes ?? this.quotes,
-      // savedQuotes: newSavedQuotes ?? this.savedQuotes
     );
   }
 }

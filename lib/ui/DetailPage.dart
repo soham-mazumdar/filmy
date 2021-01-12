@@ -15,27 +15,16 @@ class DetailPage extends StatelessWidget {
         final Map<String, dynamic> args = {
           "isLoading": store.state.isLoading,
           "selectedMovie": store.state.selectedMovie,
-          // "routes": store.state.routes,
-          // "selectMovie": (int movieId) {
-          //   store.dispatch(SelectMovieAction(movieId));
-          //   // return store.dispatch(NavigatorPushAction('/saved'));
-          // },
         };
         return args;
       },
       builder: (context, args) {
-        // final Function navigate = args["navigate"];
         final bool isLoading = args["isLoading"];
         final Movie selectedMovie = args['selectedMovie'];
-        // final Function selectMovie = args["selectMovie"];
-        // final Function saveQuote = args["saveQuote"];
-
-        // double _height = MediaQuery.of(context).size.height;
-        // double _width = MediaQuery.of(context).size.width;
+        
         DateTime date = DateTime.parse(selectedMovie.releaseDate);
         final DateFormat formatter = DateFormat('yMMMMd');
         final String formatted = formatter.format(date);
-        print(date);
         
 
         return Scaffold(
@@ -70,7 +59,6 @@ class DetailPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(selectedMovie.voteAverage.toString(),style: TextStyle(color: Colors.white),),
-                            // Text(selectedMovie.runtime.toString(),style: TextStyle(color: Colors.white),),
                             RichText(
                               text: TextSpan(
                                 style: TextStyle(color: Colors.white),

@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 class Movie {
   
-  int id;//	657811
+  int id;
   
   bool adult;
   String backdropPath;
-  String originalTitle;//	"Lassie - Eine abenteuerliche Reise"
-  String title;//	"Lassie Come Home"
-  String overview;//	"Remake of 1943 movie based on Eric Knight's book, \"Lassie Come Home\""
-  double popularity;//	307.756
-  String posterPath;//	"/82yxvnYtgeRzsq5f9USlrFJI05s.jpg"
-  String releaseDate;//	"2020-02-20"
-  double voteAverage;//	7.2
+  String originalTitle;
+  String title;
+  String overview;
+  double popularity;
+  String posterPath;
+  String releaseDate;
+  double voteAverage;
   String runtime;
   
   Movie({
@@ -42,14 +42,6 @@ class Movie {
     voteAverage = json['vote_average'];
     runtime = json['runtime'] != null ? (json['runtime']~/60).toStringAsFixed(0) + ":" + (json['runtime']%60).toString() : json['runtime'];
   }
-
-  // Map<String, dynamic> toJson(){
-    // return {
-    //   "id": this.id,
-    //   "body": this.body,
-    //   "author": this.author,
-    // };
-  // }
 
   
 }

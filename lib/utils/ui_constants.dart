@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 
-ThemeData getThemeData() {
-  return ThemeData(
-    primaryColor: AppColors.primary,
-    accentColor: AppColors.accent,
-    canvasColor: Colors.white,
-  );
-}
+// ThemeData getThemeData() {
+//   return ThemeData(
+//     primaryColor: AppColors.primary,
+//     accentColor: AppColors.accent,
+//     canvasColor: Colors.white,
+//   );
+// }
 
 
 MaterialColor createSwatch(int r, int g, int b, double o){

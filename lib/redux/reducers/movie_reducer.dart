@@ -23,7 +23,6 @@ List<Movie> _saveNowPlaying(List<Movie> nowPlaying, SaveNowPlayingMovieAction ac
 
 List<Movie> _removeNowMovie(List<Movie> movies, RemoveNowMovieAction action) {
   movies.removeWhere((element) => element.id == action.movieId);
-  // meds.addAll(action.quotes);
   return movies;
 }
 
@@ -48,7 +47,6 @@ List<Movie> _topMovie(List<Movie> meds, SaveTopMovieAction action) {
 
 List<Movie> _removeTopMovie(List<Movie> movies, RemoveTopMovieAction action) {
   movies.removeWhere((element) => element.id == action.movieId);
-  // meds.addAll(action.quotes);
   return movies;
 }
 
